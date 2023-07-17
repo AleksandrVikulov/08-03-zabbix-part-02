@@ -268,26 +268,61 @@
 
 Процесс выполнения
 
-1. 
+1. Добавим наш шаблон, созданный в задании 1, к новым хостам `vikulovan-1` и `vikulovan-2`.
 
-2. 
+   <p></p>
+   
+   Для начала педем по пути: `Configuration -> Templates`
+   
+   <p></p>
+   
+   Здесь можно увидеть какие шаблоны уже применены к хостам. 
+   Видим, что они мониторятся с помощью шаблона `Linux by Zabbix agent`, который мы добавили в задании 2.
 
-3. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task03-img01.png">
+   </kbd>
+   <p></p>
 
-4. 
+2. Выберем машину `vikulovan-1` и в меню редактирования добавим созданный нами template `CPU-RAM monitoring`.
 
-5. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task03-img02.png">
+   </kbd>
+   <p></p>
 
-6. 
+3. Аналогично для машины `vikulovan-2`.
 
-7. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task03-img03.png">
+   </kbd>
+   <p></p>
 
-8. 
+4. Видим, что шаблон применился к двум нашим хостам.
 
-9. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task03-img04.png">
+   </kbd>
+   <p></p>
 
-10. 
+5. Проверяем через Latest Data, что наши item'ы по CPU и RAM пишутся.
 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task03-img05-1.png">
+   </kbd>
+   <p></p>
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task03-img05-2.png">
+   </kbd>
+   <p></p>
+   
 ---
 
 ### Задание 4
