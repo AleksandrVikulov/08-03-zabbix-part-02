@@ -367,31 +367,161 @@
 
 Эти задания дополнительные (не обязательные к выполнению) и никак не повлияют на получение вами зачета по этому домашнему заданию. Вы можете их выполнить, если хотите глубже и/или шире разобраться в материале.
 
-### Задание 5*
+### Задание 5* со звездочкой
 
-1. 
+1. Первым делом добавим изображение для нашей карты.
+   
+   <p></p>
+   
+   Перейдем по следующему пути в меню в админке Zabbix:
+   
+   <p></p>
+   
+   `Administration -> General -> Imagies`
+   
+   <p></p>
+   
+   Далее в правом верхнем углу сменим тип на `background` и нажмем кпонку `Create background`.
+   
+   <p></p>
+   
+   Выберем файл с картой из локальной папки и добавим её.
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img01.png">
+   </kbd>
+   <p></p>
 
-2. 
+2. Далее создадим карту.
 
-3. 
+   <p></p>
+   
+   Перейдем по следующему пути в меню в админке Zabbix:
+   
+   <p></p>
+   
+   `Monitoring -> Maps`
+   
+   <p></p>
+   
+   Далее в правом верхнем углу нажмем кпонку `Create map`.
+   
+   <p></p>
+   
+   На экране создания введем название карты, выберем созданный бэкграунд. 
+   Указываем длину и высоту карты согласно оригинальному изображению.
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img02.png">
+   </kbd>
+   <p></p>
 
-4. 
+3. Видим, что наша карта создалась и появилась в списке доступных.
 
-5. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img03.png">
+   </kbd>
+   <p></p>
 
-6. 
+4. Начнем располагать наши хосты на карте.
 
-7. 
+   <p></p>
+   
+   Согласно заданию надо расположить на карте только два хоста, но для закрепления навыка расположим все четыре.
+   
+   <p></p>
+   
+   Сначала установим Zabbix сервер в районе города Минас-Тирит.
+   Свяжем хост с его изображением установкой соответствующих параметров.
 
-8. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img04.png">
+   </kbd>
+   <p></p>
 
-9. 
+5. Далее расположем остальные сервера.
 
-10. 
+   * Хост `vikulov-vm-for-zabbix-agent` установим в Эдорасе.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img05-1.png">
+   </kbd>
+   <p></p>
+
+   * Хост `vikulovan-1` установим у эльфов в Ривенделле.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img05-2.png">
+   </kbd>
+   <p></p>
+   
+   * Хост `vikulovan-2` установим у гномов Одинокой горы.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img05-3.png">
+   </kbd>
+   <p></p>
+
+6. Создадим линки между Zabbix сервером и хостами с агентами.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img06.png">
+   </kbd>
+   <p></p>
+
+7. Для каждой из связей зададим триггер на отсутствие связи с агентом.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img07.png">
+   </kbd>
+   <p></p>
+
+8. Остановим Zabbix агенты на серверах
+
+   * На хосте `vikulov-vm-for-zabbix-agent`
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img08-1.png">
+   </kbd>
+   <p></p>
+
+   * На хосте `vikulovan-1`
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img08-2.png">
+   </kbd>
+   <p></p>
+   
+   * На хосте `vikulovan-2`
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img08-3.png">
+   </kbd>
+   <p></p>
+
+9. Проверим карту, и увидим, что триггер на связях сработал.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task05-img09.png">
+   </kbd>
+   <p></p>
 
 ---
 
-### Задание 6*
+### Задание 6* со звездочкой
 
 Процесс выполнения
 
@@ -417,7 +547,7 @@
 
 ---
 
-### Задание 7*
+### Задание 7* со звездочкой
 
 Процесс выполнения
 
@@ -443,7 +573,7 @@
 
 ---
 
-### Задание 8*
+### Задание 8* со звездочкой
 
 Процесс выполнения
 
@@ -469,7 +599,7 @@
 
 ---
 
-### Задание 9*
+### Задание 9* со звездочкой
 
 Процесс выполнения
 
