@@ -154,25 +154,113 @@
 
 Процесс выполнения
 
-1. 
+1. Создам в Yandex.Cloud две новые виртуальные машины.
 
-2. 
+   * Хост `vikulovan-1`
+   * Хост `vikulovan-2`
+   
+   Конфигурация машин будет аналогична машинам в задании 1.
+   
+   Внутренние IP адреса присвоены облаком Яндекс автоматически:
+  
+   * `vikulovan-1: 192.168.0.4`
+   * `vikulovan-2: 192.168.0.20`
 
-3. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img01.png">
+   </kbd>
+   <p></p>
+   
+2. Установим Zabbix-агент на машине `vikulovan-1`
 
-4. 
+  * Скачиваем пакет с репозиторием Zabbix
 
-5. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-1.png">
+   </kbd>
+   <p></p>
 
-6. 
+  * Распаковываем
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-2.png">
+   </kbd>
+   <p></p>
+   
+  * Обновляем менеджер пакетов
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-3.png">
+   </kbd>
+   <p></p>
 
-7. 
+  * Устанавливаем Zabbix агент
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-4.png">
+   </kbd>
+   <p></p>
 
-8. 
+  * Добавляем в конфигурационный файл IP-адрес хоста, на котором расположен Zabbix сервер, чтобы разрешить подключение.
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-5.png">
+   </kbd>
+   <p></p>
 
-9. 
+  * Запускаем Zabbix агент и добавляем его в автозагрузку хоста
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-6.png">
+   </kbd>
+   <p></p>
+   
+  * Добавляем новый хост в админке Zabbix, указывая для подключения соответствующий IP адрес машины `vikulovan-1`.
+    Для мониторинга выбираем шаблон `Linux by Zabbix agent`
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-7.png">
+   </kbd>
+   <p></p>
+   
+  * Видим, что хост подцепился.
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-8.png">
+   </kbd>
+   <p></p>
 
-10. 
+  * Видим, что данные приходят в разделе Latest Data
+  
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img02-9.png">
+   </kbd>
+   <p></p>
+
+3. Аналогичным будет процесс установки Zabbix агента на хост `vikulovan-2`.
+   Не будем расписывать процесс так подробно. Покажем, что хост подцепился, и данные приходят в раздел Latest Data.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img03-1.png">
+   </kbd>
+   <p></p>
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task02-img03-2.png">
+   </kbd>
+   <p></p>
 
 ---
 
