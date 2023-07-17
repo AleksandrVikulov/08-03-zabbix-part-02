@@ -272,7 +272,7 @@
 
    <p></p>
    
-   Для начала педем по пути: `Configuration -> Templates`
+   Для начала перейдем по пути: `Configuration -> Templates`
    
    <p></p>
    
@@ -329,25 +329,38 @@
 
 Процесс выполнения
 
-1. 
+1. Через админку Zabbix создадим новый дашборд
 
-2. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task04-img01.png">
+   </kbd>
+   <p></p>
 
-3. 
+2. Будем выводить информацию о скачках нагрузки на всех четырех хостах.
+   Создадим сперва новый виджет с CPU jumps для Zabbix сервера.
 
-4. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task04-img02.png">
+   </kbd>
+   <p></p> 
+    
+3. Аналогичный график выведем для остальных хостов.
 
-5. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task04-img03.png">
+   </kbd>
+   <p></p>
 
-6. 
+4. Дашборд создан
 
-7. 
-
-8. 
-
-9. 
-
-10. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task04-img04.png">
+   </kbd>
+   <p></p>
 
 ---
 ## Дополнительные задания (со звездочкой*)
