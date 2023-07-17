@@ -4,7 +4,35 @@
 
 Процесс выполнения
 
-1. 
+1. Будем продолжать использовать две ВМ, созданные в предыдущем задании по Zabbix.
+   Это два хоста, созданные на Yandex.Cloud. 
+   
+   * Первый хост: vikulov-vm-for-zabbix-server
+     На этом хосте установлен Zabbix сервер и агент
+   * Второй хост: vikulov-vm-for-zabbix-agent
+     На этом хосте установлен Zabbix агент
+
+  Обе машины с абсолютно одинаковыми конфигурациями, на борту Debian 11, находятся в одной подсети
+  
+  Внутренние IP адреса присвоены облаком Яндекс автоматически:
+  
+  * `vikulov-vm-for-zabbix-server: 192.168.0.3`
+  * `vikulov-vm-for-zabbix-agent-linux: 192.168.0.34`
+  
+  Мониторинг для этих машин уже был настроен.
+  
+  <p></p>
+  <kbd> 
+    <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task01-img01-1.png">
+  </kbd>
+  <p></p> 
+  
+  <p></p>
+  <kbd> 
+    <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task01-img01-2.png">
+  </kbd>
+  <p></p> 
+
 
 2. 
 
