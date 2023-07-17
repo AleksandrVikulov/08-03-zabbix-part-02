@@ -523,33 +523,119 @@
 
 ### Задание 6* со звездочкой
 
-Процесс выполнения
+1. Напишем скрипт на bash согласно заданию.
 
-1. 
+   ```
+   #!/bin/bash
 
-2. 
+   if [[ $1 == 1 ]]; then
+	echo "Vikulov Aleksandr Nikolaevich"
+   fi
 
-3. 
+   if [[ $1 == 2 ]]; then
+	date
+   fi
+   ```
 
-4. 
+2. Зайдем на Zabbix сервер и создадим файл с этим скриптом в директории
+   `/etc/zabbix/zabbix_agentd.d`
+    
+    <p></p>
+    
+    Назовем файл `namr-date.sh`.
+    
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img02.png">
+   </kbd>
+   <p></p>
+   
 
-5. 
+3. В этой же папке создадим дополнительный файл конфигурации `user_parameters.conf`.
+   По аналогии с лекцией пропишем в этом файле три юзер параметра в зависимости от использования скрипта:
+   
+   * Параметр `name_check`, где сразу подаем 1 в скрипт, чтобы он вернул ФИО
+   * Параметр `date_check`, где сразу подаем 2 в скрипт, чтобы он вернул текущую дату
+   * Параметр `name_date[*]`, на вход которого будем подавать параметры вручную
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img03.png">
+   </kbd>
+   <p></p>
 
-6. 
+4. Теперь идем в админку Zabbix.
 
-7. 
+   <p></p>
+   
+   Проходим в основном меню в `Configuration -> Templates`.
+   Находим созданный нами шаблон `CPU-RAM monitoring`.
+   Переходим в `Items` этого шаблона.
+   В правом верхнем углу щелкаем `Create item`.
 
-8. 
+5. Далее создаем четыре разных item'а, используя наши UserParameters.
 
-9. 
+   * Item `Name check`, который использует юзер параметр `name_chech`
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img05-1.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Date check`, который использует юзер параметр `date_chech`
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img05-2.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Name-date script 1`, который использует юзер параметр `name_date` c 1 на входе
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img05-3.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Name-date script 2`, который использует юзер параметр `name_date` c 2 на входе
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img05-4.png">
+   </kbd>
+   <p></p>
 
-10. 
+6. Добавим к Zabbix серверу наш шаблон `CPU-RAM Monitoring`
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img06.png">
+   </kbd>
+   <p></p>
+
+7. И посмотрим в `Latest Data` наши созданные UserParameters
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img07-1.png">
+   </kbd>
+   <p></p>
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img07-2.png">
+   </kbd>
+   <p></p>
+
+   Как видим всё работает корректно.
+   Item'ы `Name check` и `Name-date script 1` возвращают ФИО.
+   Item'ы `Date check` и `Name-date script 2` возвращают дату.
 
 ---
 
 ### Задание 7* со звездочкой
-
-Процесс выполнения
 
 1. 
 
@@ -575,7 +661,6 @@
 
 ### Задание 8* со звездочкой
 
-Процесс выполнения
 
 1. 
 
@@ -601,7 +686,6 @@
 
 ### Задание 9* со звездочкой
 
-Процесс выполнения
 
 1. 
 
