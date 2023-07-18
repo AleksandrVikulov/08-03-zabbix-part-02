@@ -524,6 +524,8 @@
 ### Задание 6* со звездочкой
 
 1. Напишем скрипт на bash согласно заданию.
+   
+   <p></p>
 
    ```
    #!/bin/bash
@@ -536,6 +538,8 @@
 	date
    fi
    ```
+   
+   <p></p>
 
 2. Зайдем на Zabbix сервер и создадим файл с этим скриптом в директории
    `/etc/zabbix/zabbix_agentd.d`
@@ -549,7 +553,6 @@
      <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task06-img02.png">
    </kbd>
    <p></p>
-   
 
 3. В этой же папке создадим дополнительный файл конфигурации `user_parameters.conf`.
    По аналогии с лекцией пропишем в этом файле три юзер параметра в зависимости от использования скрипта:
@@ -575,7 +578,7 @@
 
 5. Далее создаем четыре разных item'а, используя наши UserParameters.
 
-   * Item `Name check`, который использует юзер параметр `name_chech`
+   * Item `Name check`, который использует юзер параметр `name_check`
    
    <p></p>
    <kbd> 
@@ -583,7 +586,7 @@
    </kbd>
    <p></p>
    
-   * Item `Date check`, который использует юзер параметр `date_chech`
+   * Item `Date check`, который использует юзер параметр `date_check`
    
    <p></p>
    <kbd> 
@@ -637,25 +640,150 @@
 
 ### Задание 7* со звездочкой
 
-1. 
+1. Дополним python скрипт из лекции согласно заданию.
 
-2. 
+<p></p>
 
-3. 
+```
+import sys
+import os
+import re
+from datetime import date
 
-4. 
+if (sys.argv[1] == '-ping'):
+    result = os.popen("ping -c 1 " + sys.argv[2]).read()
+    result = re.findall(r"time=(.*) ms", result)
+    print(result[0])
+elif (sys.argv[1] == '-simple_print'):
+    print(sys.argv[2])
+elif (sys.argv[1] == '1'):
+    print("Vikulov Aleksandr Nikolaevich")
+elif (sys.argv[1] == '2'):
+    print(date.today())
+else:
+    print(f"unknown input: {sys.argv[1]}")
+```
 
-5. 
+<p></p>
 
-6. 
+2. Зайдем на Zabbix сервер и создадим файл с этим скриптом в директории
+   `/etc/zabbix/zabbix_agentd.d`
+    
+    <p></p>
+    
+    Назовем файл `param.py`.
+    
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img02.png">
+   </kbd>
+   <p></p>
 
-7. 
+3. Откроем созданный в задании 6 файл `user_parameters.conf`, который лежит в этой же папке.
+   Будем дополнять этот файл новыми параметрами, используя python скрипт.
+   Прошпишем пять новых юзер параметров:
+   
+   * Параметр `custom_py_ping[*]`, где сразу пингуем какой-то хост, кототый подаем на вход
+   * Параметр `custom_py_print[*]`, где сразу выводим на экран то, что подаем на вход
+   * Параметр `custom_py_name`, где сразу подаем на вход скрипта 1, чтобы получить ФИО
+   * Параметр `custom_py_date` где сразу подаем на вход скрипта 2, чтобы получить дату
+   * Параметр `custom_py_script`, в котором скрипт используется в своей полной форме
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img03.png">
+   </kbd> 
 
-8. 
+4. Теперь идем в админку Zabbix.
 
-9. 
+   <p></p>
+   
+   Проходим в основном меню в `Configuration -> Templates`.
+   Находим созданный нами шаблон `CPU-RAM monitoring`.
+   Переходим в `Items` этого шаблона.
+   В правом верхнем углу щелкаем `Create item`.
 
-10. 
+5. Создадим восемь новых item'ов, используя новые юзер параметры.
+   Первый четыре на основе параметров с настроенным скриптом, вторые четыре на основе параметра с полным скриптом.
+   
+   <p></p>
+   
+   Первый четыре item'а будут следующие:
+
+   * Item `Py_ping_param`, который использует юзер параметр `custom_py_ping[*]`
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img05-1.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Py_print_param`, который использует юзер параметр `custom_py_print[*]`
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img05-2.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Py_name_param`, который использует юзер параметр `custom_py_name`
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img05-3.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Py_date_param`, который использует юзер параметр `custom_py_date` c 2 на входе
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img05-4.png">
+   </kbd>
+   <p></p>
+   
+6. Item'ы на основе полного скрипта будут на его вход разные параметры:
+
+   * Item `Py_script_ping`, который использует юзер параметр `custom_py_script[*]` с параметрами для пинга
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img06-1.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Py_script_print`, который использует юзер параметр `custom_py_script[*]` с параметрами для принта
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img06-2.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Py_script_name`, который использует юзер параметр `custom_py_script[*]` с 1 для получения ФИО
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img06-3.png">
+   </kbd>
+   <p></p>
+   
+   * Item `Py_script_date`, который использует юзер параметр `custom_py_script[*]` с 2 для получения даты
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img06-4.png">
+   </kbd>
+   <p></p>
+
+7. Зайдем в `Latest Data`.
+   Увидим, что все item'ы приходят и значения соответствуют требуемым.
+
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task07-img07.png">
+   </kbd>
+   <p></p>
 
 ---
 
