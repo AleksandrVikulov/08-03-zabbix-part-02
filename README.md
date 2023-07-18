@@ -790,48 +790,57 @@ else:
 ### Задание 8* со звездочкой
 
 
-1. 
+1. Удалим все три хоста с Zabbix агентами
 
-2. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task08-img01.png">
+   </kbd>
+   <p></p>
 
-3. 
+2. Создадим Discovery Action.
+   Триггерами будут все работающие хосты с Zabbix агентами
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task08-img02.png">
+   </kbd>
+   <p></p>
 
-4. 
+3. Настроим в Discovery Action следующие операции:
 
-5. 
+   * Будем добавлять хост в группу `Linux servers`
+   * Будем применять к хосту шаблон `Linux by Zabbix agent`
+   * Будем применять к хосту наш собтсвенный созданный ранее в предыдущих задания шаблон `СPU-RAM monitoring`
+   
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task08-img03.png">
+   </kbd>
+   <p></p>
 
-6. 
+4. Настроим правило Discovery для локальной сети
 
-7. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task08-img04.png">
+   </kbd>
+   <p></p>
 
-8. 
+5. Перейдем в раздел Discovery и удивим, что хосты были обнаружены
 
-9. 
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task08-img05.png">
+   </kbd>
+   <p></p>
 
-10. 
+6. Перейдем в раздел Hosts и увидим, что хосты были добавлены, и к ним применены нужные шаблоны.
 
----
+   <p></p>
+   <kbd> 
+     <img src="https://github.com/AleksandrVikulov/08-03-zabbix-part-02/blob/master/img/task08-img06.png">
+   </kbd>
+   <p></p>
 
-### Задание 9* со звездочкой
-
-
-1. 
-
-2. 
-
-3. 
-
-4. 
-
-5. 
-
-6. 
-
-7. 
-
-8. 
-
-9. 
-
-10. 
 
